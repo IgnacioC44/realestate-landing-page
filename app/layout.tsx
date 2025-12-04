@@ -1,12 +1,5 @@
 import Header from "./components/header";
 import "./globals.css";
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export default function RootLayout({
   children,
@@ -15,7 +8,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>
+      <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=mona-sans@400,500,600,700&display=swap" rel="stylesheet" />
+      </head>
+      <body style={{ fontFamily: 'Mona Sans, sans-serif' }}>
         <Header />
         {children}
       </body>
